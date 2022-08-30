@@ -1,0 +1,126 @@
+.container{
+
+
+
+height: 100px;
+
+background-color: rgb(10, 147, 42);
+color: white;
+display: flex;
+align-items: center;
+justify-content: space-between;
+position: sticky;
+top: 0;
+box-shadow: 0px 3px #1d6d14aa;
+}
+
+
+
+.item{
+
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.item:nth-child(2){
+
+    flex: 3;
+    font-weight: bolder;
+
+}
+
+.item:nth-child(3){
+
+   justify-content: flex-end;
+margin-right: 10px;
+}
+
+
+.pizzaSlice {
+padding: 10px;
+
+width: 70px;
+height: 70px;
+
+
+}
+
+
+
+
+
+
+
+
+.texts {
+
+
+
+font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
+
+
+.text:nth-child(1){
+
+    font-size: 15px;
+      font-weight: 400;
+      font-family: 'Courier New', Courier, monospace;
+    
+}
+
+.text:nth-child(2){
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+
+.list {
+
+
+    padding: 0;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    color: white;
+
+}
+
+
+.listItem{
+
+    margin: 20px;
+    font-weight: 500;
+}
+
+
+
+
+
+.cart {
+margin-right: 20px;
+position: relative;
+    
+}
+
+.counter {
+color: black;
+ position: absolute;
+ top: -10px;
+ right: -10px;
+ width: 20px;
+ height: 20px;
+border-radius: 30%;
+background-color: white;
+padding: 14px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: bold;
+
+}
