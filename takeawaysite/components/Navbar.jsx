@@ -8,7 +8,7 @@ const Navbar = () => {
     <div className={styles.container}>
    <div className={styles.item}>
    <div className={styles.pizzaSlice}>
-  <Image src="/img/pizzaslice.png"  alt="Pizza Logo" width={50} height={50} />
+  <Image src="/img/logo2.png"  alt="Pizza Logo" width={50} height={50} />
   </div>
 
 
@@ -16,6 +16,7 @@ const Navbar = () => {
 <div className={styles.texts}>
 <div className={styles.text}> Call Us!</div>
 <div className={styles.text}>0171 284 3845 </div>
+<div className={styles.text}>100% Vegan Delivery </div>
 </div>
 </div>
 
@@ -26,7 +27,7 @@ const Navbar = () => {
 <li className={styles.listItem}>Food</li>
 <li className={styles.listItem}>Drink</li>
 <li className={styles.listItem}>Deals</li>
-<Image  src="/img/mainlogo.png" alt="" width="160px" height="80px" />
+<Image  src="/img/mainlogopink.png" alt="" width="160px" height="80px" />
 <li className={styles.listItem}>FAQ</li>
 <li className={styles.listItem}>About</li>
 <li className={styles.listItem}>Contact</li>
