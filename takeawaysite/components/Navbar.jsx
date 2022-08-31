@@ -16,7 +16,7 @@ const Navbar = () => {
 <div className={styles.texts}>
 <div className={styles.text}> Call Us!</div>
 <div className={styles.text}>0171 284 3845 </div>
-<div className={styles.text}>100% Vegan Delivery </div>
+<div className={styles.text}>100% Vegan </div>
 </div>
 </div>
 
@@ -28,9 +28,10 @@ const Navbar = () => {
 <li className={styles.listItem}>Drink</li>
 <li className={styles.listItem}>Deals</li>
 <Image  src="/img/mainlogopink.png" alt="" width="160px" height="80px" />
-<li className={styles.listItem}>FAQ</li>
 <li className={styles.listItem}>About</li>
+<li className={styles.listItem}>Become A Shhhef!</li>
 <li className={styles.listItem}>Contact</li>
+<li className={styles.listItem}>Log In</li>
 </ul>
 
 

@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Featured from "../components/Featured";
+import ProductList from "../components/ProductList";
 export default function Home() {
   return (
     <div>
@@ -16,6 +17,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Featured />
+      <ProductList />
     </div>
   );
 }

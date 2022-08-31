@@ -1,0 +1,21 @@
+.container {
+    background-color: rgba(209, 151, 203, 0.652);
+
+
+    width: 50%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 40px;
+    
+    }
+
+
+    .image{
+
+        
+
+        border-radius: 20px;
+    }
