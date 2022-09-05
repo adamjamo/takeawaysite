@@ -1,0 +1,210 @@
+.container {
+    
+padding: 50px;
+display: flex;
+
+}
+
+
+.left{
+    flex: 2;
+}
+
+
+.table {
+
+    width: 100%;
+
+text-align: left;
+
+margin-bottom: 50px;
+}
+
+
+.done {
+
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.inProgress {
+
+    display: flex;
+animation: inProgress 1s ease infinite alternate;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+@keyframes inProgress {
+
+from {
+
+    opacity: 0;
+}
+
+to {
+
+    opacity: 1;
+}
+
+}
+
+.undone {
+
+    display: flex;
+opacity: 0.3;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.undone .checkedIcon, .inProgress .checkedIcon {
+
+    display: none;
+}
+
+
+
+
+.row:last-child{
+width: 91%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.right{
+  flex: 1;
+
+}
+
+
+.wrapper {
+    
+    width: 90%;
+    max-height: 300px;
+    background-color: #333;
+    padding: 50px;
+    padding-top: 10px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+  }
+
+  .totalTextTitle {
+      
+    margin-right: 10px;
+  }
+
+  .button {
+    height: 30px;
+
+    font-weight: bold;
+    cursor: not-allowed;
+    margin-top: 20px;
+  }
+
+
+
+  @media screen and (max-width: 480px) {
+    .container{
+
+    flex-direction: column;
+padding: 20px;
+    }
+
+
+    .table {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+
+    .trTitle {
+        display: none;
+        
+    }
+
+    .tr{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    }
+
+
+ 
+
+
+    .extras, .price, .quantity {
+
+
+        font-size: 22px;
+    }
+
+    .wrapper {
+
+        align-items: center;
+        justify-content: center;
+width: 100%;
+border-radius: 0px;
+        
+    }
+
+
+    .id::before {
+        content:'Order ID: ';
+
+        font-weight: bold;
+    }
+
+
+    .name::before {
+        content:'Customer Name: ';
+
+        font-weight: bold;
+    }
+
+    .address::before {
+        content:'Address: ';
+
+        font-weight: bold;
+    }
+
+
+    .total::before {
+        content:'Paid: ';
+
+        font-weight: bold;
+    }
+.row:last-child {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+  
+
+.done, .undone, .inProgress{
+
+    margin-bottom: 20px;
+}
+  }
+
+
+
+
+

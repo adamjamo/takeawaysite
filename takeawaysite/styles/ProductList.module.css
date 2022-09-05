@@ -12,6 +12,9 @@ align-items: center;
 
 .title {
     color: #444;
+    font-size: 18px;
+    font-weight: bold;
+    color: blue;
 
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -34,4 +37,24 @@ font-style: italic;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+
+
+@media screen and (max-width: 480px) {
+ .title {
+
+
+     text-align: center;
+ }
+
+
+
+.desc {
+
+    width: 90%;
+    text-align: center;
+}
+
+
 }

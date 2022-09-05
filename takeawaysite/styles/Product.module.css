@@ -1,0 +1,216 @@
+.container {
+    color: white;
+  display: flex;
+height: calc(100vh - 100px);
+background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+background-size: 400% 400%;
+animation: gradient 5s ease infinite;
+font-style: italic;
+overflow: hidden;
+}
+
+
+.left {
+    flex: 1;
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+
+.right {
+    flex: 1;
+    padding: 20px;
+  
+    
+}
+
+.imgContainer{
+position: relative;
+    width: 100%;
+    height: 70%;
+}
+
+
+.price {
+
+    color: yellow;
+    font-size: 44px;
+   
+    font-weight: 800;
+}
+
+
+.shhhef{
+    
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 400;
+
+}
+
+.shhhefName{
+    color: yellow;
+    font-style: italic;
+    font-size: 24px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.sizes{
+width: 40%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.size{
+
+    width: 30px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.size:nth-child(2){
+
+    width: 40px;
+    height: 40px;
+}
+
+.size:nth-child(3){
+
+    width: 50px;
+    height: 50px;
+}
+
+
+.number{
+
+position: absolute;
+top: -5px;
+right: -20px;
+background-color: green;
+font-size: 12px;
+border-radius: 10px;
+padding: 0 5px;
+
+}
+
+.ingredients {
+    display: flex;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+
+
+.option {
+
+
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+.checkbox {
+
+    width: 20px;
+    height: 20px;
+
+}
+
+.quantity{
+    width: 50px;
+    height: 30px;
+       border-radius: 20px;
+
+}
+
+
+.button {
+
+
+    border-radius: 20px;
+    margin-left: 10px;
+    background-color: yellow;
+    cursor: pointer;
+    padding: 10px;
+   
+}
+
+
+ @media screen and (max-width: 480px) {
+        .container {
+       flex-direction: column;
+height: auto;
+            text-align: center;
+            margin-top: 20px;
+        }
+     
+      
+
+        .imgContainer{
+            background-color: #222;
+            width: 100vw;
+            height: 60vw;
+            text-align: center;
+
+            
+        }
+       
+.price{
+
+    font-size: 30px;
+}
+        
+
+
+.title {
+
+    margin: 5px;
+}
+
+
+
+.sizes {
+
+    width: 100%;
+
+    padding: 0px 20px;
+}
+
+
+
+.ingredients{
+flex-direction: column;
+
+
+}
+
+
+.option{
+
+    flex-direction: column;
+    align-items: flex-start;}
+
+.checkbox{
+    flex-direction: column;
+
+    width: 25px;
+    height: 25px;
+}
+
+
+.quantity, .button {
+
+    height: 50px;
+    padding: 10px, 20px;
+}
+       }

@@ -8,7 +8,7 @@ align-items: center;
 justify-content: space-around;
 position: relative;
 top: 0;
-
+z-index: 999%;
 }
 
 
@@ -120,4 +120,24 @@ align-items: center;
 justify-content: center;
 font-weight: bold;
 
+}
+
+
+
+
+
+
+@media screen and (max-width: 480px) {
+    .item:nth-child(2) {
+        display: none;
+    }
+    .item:nth-child(1) {
+        flex: 3;
+    }
+
+.container {
+    background-color:rgba(209, 151, 203, 0.652);
+
+
+}
 }
