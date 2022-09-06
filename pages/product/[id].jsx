@@ -2,11 +2,48 @@ import React, {useState} from 'react';
 import styles from '../../styles/Product.module.css';
 import Image from "next/image";
 import axios from 'axios';
+
+
+
+
 const Product = ({product}) => {
 
+  const [price, setPrice] = useState(product.prices[0]);
   const [size, setSize] = useState(0);
+  const [quantity, setQuantity] = useState(1);
+  const [extras, setExtras] = useState([]);
 
-   
+
+
+const changePrice = (number) => {
+  setPrice (price + number)
+}
+
+  const handleSize = (sizeIndex) => {
+    const difference = product.prices[sizeIndex] - product.prices[size]
+    setSize(sizeIndex)
+    changePrice(difference);
+
+  }
+
+
+  const handleChange = (e, option) => {
+    const checked = e.target.checked;
+    if (checked) {
+      console.log('check mate')
+      changePrice(option.price)
+      setExtras((prev) => [...prev, option]);
+    } else {
+
+      changePrice(-option.price)
+      setExtras(extras.filter((extra) => extra._id !== option._id));
+    
+    }
+  }
+
+
+console.log(extras)
+
 
   return (
     <div className={styles.container}>
@@ -26,22 +63,22 @@ const Product = ({product}) => {
    @{product.shhhef}
    </div>
    </h2>
-<span className={styles.price}> £{product.prices[size]}</span>
+<span className={styles.price}> £{price} </span>
 <p className={styles.desc}> {product.desc}</p>
 
 <h3 className={styles.choose}> Choose Size:</h3>
 <div className={styles.sizes}>
-<div className={styles.size} onClick={()=>setSize(0)}>
+<div className={styles.size} onClick={()=>handleSize(0)}>
 <Image  src="/img/size.png" layout="fill" alt="small" />
 <span className={styles.number}>Small</span>
   
 </div>
-<div className={styles.size} onClick={()=>setSize(1)}>
+<div className={styles.size} onClick={()=>handleSize(1)}>
 <Image  src="/img/size.png" layout="fill" alt="medium" />
 <span className={styles.number}>Medium</span>
   
 </div>
-<div className={styles.size}onClick={()=>setSize(2)}>
+<div className={styles.size}onClick={()=>handleSize(2)}>
 <Image  src="/img/size.png" layout="fill" alt="large" />
 <span className={styles.number}>Large</span>
   
@@ -50,98 +87,33 @@ const Product = ({product}) => {
 </div>
 <h3 className={styles.choose}> Extras:</h3>
 <div className={styles.ingredients}>
-<div className={styles.option}>
+          {product.extraOptions.map((option) => (
+            <div className={styles.option} key={option._id}>
+              <input
+                type="checkbox"
+                id={option.text}
+                name={option.text}
+                className={styles.checkbox}
+                onChange={(e) => handleChange(e, option)}
+              />
+              <label htmlFor="double">{option.text}</label>
+            </div>
+          ))}
+        </div>
 
 
 
-  
-
-
-
-
-<input type='checkbox' 
-id='mushrooms'
-name='mushrooms'
-className={styles.checkbox}
-
-
-/>
-
-
-<label htmlFor="mushrooms"> Mushrooms </label> 
-
-
-
-
-<input type='checkbox' 
-id='facon'
-name='facon'
-className={styles.checkbox}
-
-
-/>
-<label htmlFor="facon"> Facon </label> 
-
-
-
-<input type='checkbox' 
-id='cheeze'
-name='cheeze'
-className={styles.checkbox}
-
-
-/>
-<label htmlFor="cheeze"> Extra Cheeze </label> 
-
-
-<input type='checkbox' 
-id='olives'
-name='olives'
-className={styles.checkbox}
-
-
-/>
-<label htmlFor="olives"> Olives </label> 
-
-<input type='checkbox' 
-id='jalepenos'
-name='jalepenos'
-className={styles.checkbox}
-
-
-/>
-<label htmlFor="jalepenos"> Jalepenos </label>
-
-<input type='checkbox' 
-id='chillisauce'
-name='chillisauce'
-className={styles.checkbox}
-
-
-/>
-<label htmlFor="chillisauce"> Chilli Sauce </label >
-
-<input type='checkbox' 
-id='aioli'
-name='aioli'
-className={styles.checkbox}
-
-
-/>
-<label htmlFor="aioli"> Vegan Aioli </label >
-
-
-</div>
-
-
-<div className={styles.add}>
-
-  <input type="number" defaultValue={1} className={styles.quantity}>
-
-    
-  </input>
-  <button className={styles.button}>  Add To Basket</button>
-</div>
+        <div className={styles.add}>
+          <input
+            onChange={(e) => setQuantity(e.target.value)}
+            type="number"
+            defaultValue={1}
+            className={styles.quantity}
+          />
+          <button className={styles.button} onClick={handleClick}>
+            Add to Cart
+          </button>
+        </div>
 </div>
 
 
@@ -150,7 +122,7 @@ className={styles.checkbox}
 </div>
 
 
-    </div>
+
     
     
   )
