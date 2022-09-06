@@ -42,6 +42,12 @@ const changePrice = (number) => {
   }
 
 
+  const handleClick = () => {
+    dispatch(addProduct({...pizza, extras, price, quantity}));
+  };
+
+
+
 console.log(extras)
 
 
