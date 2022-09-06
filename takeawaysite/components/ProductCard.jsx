@@ -1,20 +1,35 @@
 import React from 'react'
 import Image from 'next/image'
-
+import Link from 'next/link'
 import styles from "../styles/ProductCard.module.css"
 
-const ProductCard = () => {
+const ProductCard = ({product}) => {
+
+
+
+  let theshef = product.shhhef
+
+
+  if (theshef === undefined ) {
+
+    theshef = '???'
+  }
+
   return (
     <div className={styles.container}>
-        
-        <Image className={styles.image} src="/img/BLUEBANG.png" alt="Pizza Logo" width={400} height={250} />
-
-        <h1 className={styles.title}> THE FEISTY VEGAN
+        <Link href={`/product/${product._id}`} passHref>
+        <Image className={styles.image} src={product.img} alt="Pizza Image" width={400} height={250} />
+        </Link>
+        <h1 className={styles.title}> {product.title}
 
         </h1>
-        <span className={styles.price} > £5.99 </span>
+
+          <h1 className={styles.Shhhef}>  Made by @{theshef}
+
+        </h1>
+        <span className={styles.price} > £{product.prices[0]} </span>
 <p className={styles.desc}>
- Firey Hot Vegan Cheeze and Tomato Pizza with Chipotle Chillis. 
+{product.desc}
 </p>
     </div>
   )

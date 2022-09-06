@@ -1,42 +1,33 @@
 import React, {useState} from 'react';
 import styles from '../../styles/Product.module.css';
 import Image from "next/image";
-
-const Product = () => {
+import axios from 'axios';
+const Product = ({product}) => {
 
   const [size, setSize] = useState(0);
 
-    const pizza = {
-
-        id: 1,
-        img: '/img/BANGBANG.png',
-        shhhef: 'HannyB',
-        name: 'Bang Bang Cauliflower',
-        price: ['5.99 [Serves 1]', '7.99 [Serves 2]', '9.99 [Serves 4]'],
-        desc: 'Delishhhus Vegan Bang Bang Cauliflower Pizza On Thick Crust Sourdough Base... Oooo Go On!🤤 '
-
-    };
+   
 
   return (
     <div className={styles.container}>
             <div className={styles.left}>
             <div className={styles.imgContainer}>
 
-                <Image src={pizza.img} layout="fill" alt={pizza.name}/>
+                <Image src={product.img} layout="fill" alt={product.name}/>
             </div>
             </div>
 
 <div className={styles.right}> 
 
 
-<h1 className={styles.title}>{pizza.name}</h1>
-<h2 className={styles.shhhef}> Shhhef:
+<h1 className={styles.title}>{product.title}</h1>
+<h2 className={styles.shhhef}> Shhhef: 
 <div className={styles.shhhefName}> 
-   @{pizza.shhhef}
+   @{product.shhhef}
    </div>
    </h2>
-<span className={styles.price}> £{pizza.price[size]}</span>
-<p className={styles.desc}> {pizza.desc}</p>
+<span className={styles.price}> £{product.prices[size]}</span>
+<p className={styles.desc}> {product.desc}</p>
 
 <h3 className={styles.choose}> Choose Size:</h3>
 <div className={styles.sizes}>
@@ -89,7 +80,7 @@ className={styles.checkbox}
 
 
 />
-<label htmlFor="facon"> 'Facon' </label> 
+<label htmlFor="facon"> Facon </label> 
 
 
 
@@ -165,4 +156,18 @@ className={styles.checkbox}
   )
 }
 
+export const getServerSideProps = async ({params}) => {
+  const res = await axios.get(`http://localhost:3000/api/products/${params.id}`);
+
+  return {
+    props: {
+      product: res.data,
+    },
+  };
+};
+
+
 export default Product
+
+
+

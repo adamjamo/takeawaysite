@@ -1,7 +1,8 @@
 .container {
     background-color: rgba(209, 151, 203, 0.652);
-    width: 22%;
-    padding: 10px;
+    width: 30%;
+    height: 10%;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
