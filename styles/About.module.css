@@ -1,0 +1,25 @@
+.about {
+
+position: relative;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 0, 238, 0.318);
+
+    width: 80%;
+padding: 20px;
+border-radius: 10px;
+text-align: center;
+margin-top: 20px;
+margin-bottom: 20px;
+}
+
+
+
+.chefsignup {
+
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

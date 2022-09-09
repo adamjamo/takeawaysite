@@ -18,13 +18,13 @@ const ProductCard = ({product}) => {
   return (
     <div className={styles.container}>
         <Link href={`/product/${product._id}`} passHref>
-        <Image className={styles.image} src={product.img} alt="Pizza Image" width={400} height={250} />
+        <Image className={styles.image} src={product.img} alt="Pizza Image" width={400} height={400} />
         </Link>
         <h1 className={styles.title}> {product.title}
 
         </h1>
 
-          <h1 className={styles.Shhhef}>  Made by @{theshef}
+          <h1 className={styles.Shhhef}>  Shhhef: @{theshef}
 
         </h1>
         <span className={styles.price} > £{product.prices[0]} </span>

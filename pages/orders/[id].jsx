@@ -2,12 +2,12 @@ import React from 'react'
 import styles from '../../styles/Order.module.css';
 import Image from 'next/image'
 
+import axios from 'axios';
+
+const Order = ({order}) => {
 
 
-const Order = () => {
-
-
-const status = 0;
+const status = order.status;
 
 const statusClass = (index) => {
 
@@ -32,22 +32,22 @@ if (index - status > 1) return styles.undone;
 <tr className={styles.tr}>
 <td>
 <span className={styles.id}>
-12345
+{order._id}
 </span>
   </td>
   <td>
 <span className={styles.name}>
-  Adam James
+{order.customer}
 </span>
   </td>
   <td>
 <span className={styles.address}>
-123 Plant Ave
+{order.address}
 </span>
   </td>
   <td>
 <span className={styles.total}>
-£5.99
+£{order.total}
 </span>
   </td>
 </tr>
@@ -88,13 +88,13 @@ if (index - status > 1) return styles.undone;
            <div className={styles.wrapper}>
           <h2 className={styles.title}>CART TOTAL</h2>
           <div className={styles.totalText}>
-            <b className={styles.totalTextTitle}>Subtotal:</b>£5.99
+            <b className={styles.totalTextTitle}>Subtotal:</b>£{order.total}
           </div>
           <div className={styles.totalText}>
             <b className={styles.totalTextTitle}>Discount:</b>£0.00
           </div>
           <div className={styles.totalText}>
-            <b className={styles.totalTextTitle}>Total:</b>£5.99
+            <b className={styles.totalTextTitle}>Total:</b>£{order.total}
           </div>
           <button disabled className={styles.button}>PAID</button>
         </div>
@@ -102,5 +102,20 @@ if (index - status > 1) return styles.undone;
  </div>
   )
 }
+
+
+
+
+
+export const getServerSideProps = async ({params}) => {
+  const res = await axios.get(`http://localhost:3000/api/orders/${params.id}`);
+
+  return {
+    props: {
+      order: res.data,
+    },
+  };
+};
+
 
 export default Order
