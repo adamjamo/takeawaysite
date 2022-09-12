@@ -15,13 +15,13 @@ const sheffs = () => {
 <form action="/success  " method="post">
 
   <div className='chefsignup'>
-  <label for="first">First name:</label>
+  <label htmlFor="first">First name:</label>
   <input type="text" id="first" name="first" />
 
-  <label for="last">Last name:</label>
+  <label htmlFor="last">Last name:</label>
   <input type="text" id="last" name="last" />
 
-  <label for="email">Email Address:</label>
+  <label htmlFor="email">Email Address:</label>
   <input type="email" id="email" name="email" />
 
   <button type="submit">Submit</button>

@@ -7,7 +7,7 @@ const about = () => {
         
         <h1>About Us</h1>
         <p > 
-        Established in 2022, Delishhh is the world's first 100% Vegan platform for chefs from all backgrounds to reach their audience.</p></div>
+        Established in 2022, Delishhh is the worlds first 100% Vegan platform for chefs from all backgrounds to reach their audience.</p></div>
   )
 }
 

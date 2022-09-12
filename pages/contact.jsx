@@ -12,7 +12,7 @@ const contact = () => {
 London, E1 3AJ
 0111 867 1010
 <br></br>
-//
+
 <br></br>
 21 Plant Based Road
 London, SE1 2FC

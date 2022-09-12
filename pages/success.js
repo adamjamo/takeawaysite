@@ -5,7 +5,7 @@ import styles from "../styles/About.module.css";
 const success = () => {
   return (
     <div className={styles.about}>
-      <h1>Thanks! We'll be in touch...</h1>
+      <h1>Thanks! We will be in touch...</h1>
     </div>
   );
 };
