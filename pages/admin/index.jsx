@@ -12,7 +12,7 @@ const Index = ({ orders, products }) => {
     console.log(id);
     try {
       const res = await axios.delete(
-        "http://localhost:3000/api/products/" + id
+        "https://delishhhapp.netlify.app/api/products/" + id
       );
       setProductList(productList.filter((product) => product._id !== id));
     } catch (err) {

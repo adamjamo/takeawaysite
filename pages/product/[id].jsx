@@ -134,7 +134,7 @@ const changePrice = (number) => {
 }
 
 export const getServerSideProps = async ({params}) => {
-  const res = await axios.get(`/api/products/${params.id}`);
+  const res = await axios.get(`https://delishhhapp.netlify.app/api/products/${params.id}`);
 
   return {
     props: {
