@@ -108,7 +108,7 @@ if (index - status > 1) return styles.undone;
 
 
 export const getServerSideProps = async ({params}) => {
-  const res = await axios.get(`https://delishhhapp.netlify.app/api/orders/${params.id}`);
+  const res = await axios.get(`https://master--delishhhapp.netlify.app/api/orders/${params.id}`);
 
   return {
     props: {
